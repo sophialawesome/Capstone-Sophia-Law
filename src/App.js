@@ -1,12 +1,14 @@
 import React from 'react';
+import NavBar from "./components/nav/NavBar.js";
 import ApplicationViews from "./components/ApplicationViews";
 
-function App() {
+const App = () => {
   return (
-   <React.Fragment>
-     <ApplicationViews />
-   </React.Fragment>
+      <>
+        <NavBar />
+        <ApplicationViews />
+      </>
   );
-}
+};
 
 export default App;
