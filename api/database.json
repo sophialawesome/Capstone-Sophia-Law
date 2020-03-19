@@ -1,0 +1,56 @@
+{
+  "cats": [
+    {
+      "id": 1,
+      "name": "Zuko",
+      "breed": "Medium-haired generic floofy boi",
+      "birthdate": "2013-09-16",
+      "gender": "Male",
+      "adoptionDate": "2013-12-10",
+      "ownerId": 1
+    },
+    {
+      "name": "Mona",
+      "breed": "Tortoisehell",
+      "birthdate": "2019-05-04",
+      "gender": "Female",
+      "adoptionDate": "2020-08-21",
+      "id": 2
+    },
+    {
+      "name": "Bugaboo",
+      "breed": "Scottish Fold",
+      "birthdate": "1864-01-16",
+      "gender": "Male",
+      "adoptionDate": "2008-06-16",
+      "owner": "Tyler Cox",
+      "id": 3
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Sophia",
+      "phoneNumber": "000-000-0000",
+      "email": "crazycatlady@sophia.com"
+    }
+  ],
+  "vets": [
+    {
+      "id": 1,
+      "name": "Dogtor Woof",
+      "phoneNumber": "111-111-1111",
+      "email": "callthedogtor@dawg.com",
+      "hospitalAddress": "The Institution for Clinically Insane Felines"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "date": "2020-04-22",
+      "reason": "Routine checkup",
+      "vetId": 1,
+      "catId": 1
+    }
+  ]
+}
