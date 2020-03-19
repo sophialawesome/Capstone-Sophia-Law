@@ -7,7 +7,7 @@ const CatCard = props => {
             <h3>
                 Name: <span className="card-catname">{props.cat.name}</span>
             </h3>
-            <p>Breed: {props.animal.breed}</p>
+            <p>Breed: {props.cat.breed}</p>
         </div>
     )
     
