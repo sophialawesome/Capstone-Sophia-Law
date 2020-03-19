@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 
-const Login = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+ const Login = props => {
+   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
-  // Update state whenever an input field is edited
-  const handleFieldChange = (evt) => {
+//   // Update state whenever an input field is edited
+const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
@@ -47,4 +47,4 @@ const Login = props => {
   );
 };
 
-export default Login;
+ export default Login;

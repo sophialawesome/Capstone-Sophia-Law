@@ -1,16 +1,14 @@
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import React from "react";
 
 const CatCard = props => {
     return (
-        <div className="card">
-            <div className="card-content"> 
+        <div className="card-content">
             <h3>
                 Name: <span className="card-catname">{props.cat.name}</span>
             </h3>
-            </div>
+            <p>Breed: {props.cat.breed}</p>
         </div>
     )
+    
 }
-
-export default CatCard;
