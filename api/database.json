@@ -25,14 +25,23 @@
       "adoptionDate": "2008-06-16",
       "owner": "Tyler Cox",
       "id": 3
+    },
+    {
+      "name": "Sophia",
+      "breed": "Human?",
+      "birthdate": "1992-11-12",
+      "gender": "Female?",
+      "adoptionDate": "2020-03-20",
+      "owner": "????????",
+      "id": 4
     }
   ],
   "owners": [
     {
       "id": 1,
       "name": "Sophia",
-      "phoneNumber": "000-000-0000",
-      "email": "crazycatlady@sophia.com"
+      "email": "crazycatlady@sophia.com",
+      "phoneNumber": "222-222-2222"
     }
   ],
   "vets": [
@@ -42,6 +51,22 @@
       "phoneNumber": "111-111-1111",
       "email": "callthedogtor@dawg.com",
       "hospitalAddress": "The Institution for Clinically Insane Felines"
+    },
+    {
+      "name": "Sabrina Spellman",
+      "phoneNumber": "123-456-7890",
+      "email": "sabrina@witchdoctor.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "1800 Greendale Lane",
+      "id": 2
+    },
+    {
+      "name": "Catwoman",
+      "phoneNumber": "030-030-3030",
+      "email": "meow@catwoman.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "Arkham",
+      "id": 3
     }
   ],
   "appointments": [

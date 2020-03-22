@@ -19,7 +19,10 @@ const CatEditForm = props => {
     const editedCat = {
       id: props.match.params.catId,
       name: cat.name,
-      breed: cat.breed
+      breed: cat.breed,
+      gender: cat.gender,
+      birthdate: cat.birthdate,
+      adoptionDate: cat.adoptionDate
     };
 
     CatManager.update(editedCat)

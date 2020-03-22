@@ -13,15 +13,17 @@ const CatList = props => {
     });
   };
 
-  useEffect(() => {
-    getCats();
-  }, []);
+
 
   const deleteCat = id => {
    CatManager.delete(id).then(() =>
       CatManager.getAll().then(setCats)
     );
   };
+
+  useEffect(() => {
+    getCats();
+  }, []);
 
   return (
     <>

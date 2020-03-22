@@ -1,50 +1,55 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import OwnerManager from "../../modules/OwnerManager";
+import { Form, Button, Card } from "react-bootstrap";
 
- const Login = props => {
-   const [credentials, setCredentials] = useState({ email: "", password: "" });
+const Login = props => {
+  const [credentials, setCredentials] = useState({ email: "" });
 
-//   // Update state whenever an input field is edited
-const handleFieldChange = (evt) => {
+  const handleFieldChange = evt => {
     const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = e => {
     e.preventDefault();
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-    */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
-    props.history.push("/animals");
-  }
+    OwnerManager.getOwner(credentials.email).then(result => {
+      if (result.length === 0) {
+        window.alert("Please enter a valid email");
+      } else {
+        props.setOwner(result[0].id);
+        props.history.push("/Home");
+      }
+    });
+  };
 
   return (
-    <form onSubmit={handleLogin}>
-      <fieldset>
-        <h3>Please sign in</h3>
-        <div className="formgrid">
-          <input onChange={handleFieldChange} type="email"
-            id="email"
-            placeholder="Email address"
-            required="" autoFocus="" />
-          <label htmlFor="inputEmail">Email address</label>
-
-          <input onChange={handleFieldChange} type="password"
-            id="password"
-            placeholder="Password"
-            required="" />
-          <label htmlFor="inputPassword">Password</label>
-        </div>
-        <button type="submit">Sign in</button>
-      </fieldset>
-    </form>
+    <Form onSubmit={handleLogin} className="login_form">
+      <Form.Label>Please sign in</Form.Label>
+      <div className="formgrid">
+        <input
+          onChange={handleFieldChange}
+          type="email"
+          id="email"
+          placeholder="Email address"
+          required=""
+          autoFocus=""
+        />
+      </div>
+      <Button className="btn" bg="dark" variant="dark" type="submit">
+        Sign in
+      </Button>
+      <Button
+        className="btn"
+        type="button"
+        bg="dark"
+        variant="dark"
+        onClick={() => props.history.push(`/register`)}
+      >
+        Register
+      </Button>
+    </Form>
   );
 };
 
- export default Login;
+export default Login;

@@ -33,7 +33,7 @@ const CatDetail = props => {
         </h3>
         <p>Breed: {cat.breed}</p>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
-          Discharge
+          Delete Cat
         </button>
       </div>
     </div>
