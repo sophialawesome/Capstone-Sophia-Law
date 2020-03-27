@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react"
-import OwnerManager from "../../modules/OwnerManager"
+import AppointmentManager from "../../modules/AppointmentManager"
 
 
-const OwnerEditForm = props => {
-  const [owner, setOwner] = useState({ name: "", phoneNumber: "", email: ""});
+const AppointmentEditForm = props => {
+  const [appointment, setAppointment] = useState({reason: "", date: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...owner};
+    const stateToChange = { ...appointment};
     stateToChange[evt.target.id] = evt.target.value;
-    setOwner(stateToChange);
+    setAppointment(stateToChange);
   };
 
-  const updateExistingOwner = evt => {
+  const updateExistingAppointment = evt => {
     evt.preventDefault()
     setIsLoading(true);
 
-    const editedOwner = {
-      id: props.match.params.ownerId,
-      name: owner.name,
-      phoneNumber: owner.phoneNumber,
-      email: owner.email
+    const editedAppointment = {
+      id: props.match.params.appointmentId,
+      reason: appointment.reason,
+      date: appointment.date
     };
 
-    OwnerManager.update(editedOwner)
-      .then(() => props.history.push("/owners"))
+    AppointmentManager.update(editedAppointment)
+      .then(() => props.history.push("/appointments"))
   }
 
   useEffect(() => {
-    OwnerManager.get(props.match.params.ownerId)
-      .then(owner => {
-        setOwner(owner);
+    AppointmentManager.get(props.match.params.appointmentId)
+      .then(appointment => {
+        setAppointment(appointment);
         setIsLoading(false);
       });
   }, []);
@@ -45,26 +44,26 @@ const OwnerEditForm = props => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="name"
-              value={owner.name}
+              id="reason"
+              value={appointment.reason}
             />
-            <label htmlFor="name">Owner name</label>
+            <label htmlFor="reason">Appointment Reason</label>
 
             <input
-              type="text"
+              type="date"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="phoneNumber"
-              value={owner.phoneNumber}
+              id="date"
+              value={appointment.date}
             />
-            <label htmlFor="phoneNumber">Phone Number</label>
+            <label htmlFor="date">Appointment Date</label>
 
           </div>
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}
-              onClick={updateExistingOwner}
+              onClick={updateExistingAppointment}
               className="btn btn-primary"
             >Submit</button>
           </div>
@@ -74,4 +73,4 @@ const OwnerEditForm = props => {
   );
 }
 
-export default OwnerEditForm;
+export default AppointmentEditForm;

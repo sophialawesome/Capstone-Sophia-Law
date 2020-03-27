@@ -7,7 +7,6 @@ const VetList = props => {
   const [vets, setVets] = useState([]);
 
   const getVets = () => {
-
     return VetManager.getAll().then(vetsFromAPI => {
       setVets(vetsFromAPI);
     });

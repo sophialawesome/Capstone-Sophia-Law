@@ -5,7 +5,7 @@ export default {
     return fetch(`${remoteURL}/appointments/${id}`).then(result => result.json());
   },
   getAll() {
-    return fetch(`${remoteURL}/appointments`).then(result => result.json());
+    return fetch(`${remoteURL}/appointments?userId=${parseInt(sessionStorage.getItem("credentials"))}`).then(result => result.json())
   },
   delete(id) {
     return fetch(`${remoteURL}/appointments/${id}`, {
@@ -13,7 +13,7 @@ export default {
     }).then(result => result.json());
   },
   post(newAppointment) {
-    return fetch(`${remoteURL}/vets`, {
+    return fetch(`${remoteURL}/appointments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,7 +22,7 @@ export default {
     }).then(data => data.json());
   },
   update(editedAppointment) {
-    return fetch(`${remoteURL}/owners/${editedAppointment.id}`, {
+    return fetch(`${remoteURL}/appointments/${editedAppointment.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"

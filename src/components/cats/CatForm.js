@@ -18,9 +18,13 @@ const CatForm = props => {
       window.alert("Please input a cat's name and breed");
     } else {
       setIsLoading(true);
-     CatManager.post(cat)
+      const newCat = {
+      ...cat,
+    userId: parseInt(sessionStorage.getItem("credentials"))
+  }
+     CatManager.post(newCat)
         .then(() => props.history.push("/cats"));
-    }
+      }
   };
 
   return (
@@ -68,14 +72,7 @@ const CatForm = props => {
               placeholder="Adoption Date"
             />
          <label htmlFor="adoptionDate"> Adoption Date </label>
-         <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="owner"
-              placeholder="Owner"
-            />
-         <label htmlFor="Owner"> Owner </label>
+        
           </div>
           <div className="alignRight">
             <button

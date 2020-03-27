@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import NavBar from "./nav/NavBar";
-import ApplicationViews from "./ApplicationViews";
+import NavBar from "./components/nav/NavBar";
+import ApplicationViews from "./components/ApplicationViews";
 
 const Catstone = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;

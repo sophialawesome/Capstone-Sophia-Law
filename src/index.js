@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
+import Catstone from "./Catstone";
 
 
 ReactDOM.render(
   <Router>
-    <App />
+    <Catstone/>
   </Router>,
   document.getElementById("root")
 );

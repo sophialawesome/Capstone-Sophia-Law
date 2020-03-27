@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import VetManager from '../../modules/VetManager';
-
+import React, { useState } from "react";
+import VetManager from "../../modules/VetManager";
 
 const VetForm = props => {
-  const [vet, setVet] = useState({ name: "", phoneNumber: "", email: "", hospitalAddres: "" });
+  const [vet, setVet] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    hospitalAddres: ""
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...vet};
+    const stateToChange = { ...vet };
     stateToChange[evt.target.id] = evt.target.value;
     setVet(stateToChange);
   };
@@ -18,8 +22,11 @@ const VetForm = props => {
       window.alert("Please input owner's name and phone number.");
     } else {
       setIsLoading(true);
-     VetManager.post(vet)
-        .then(() => props.history.push("/vets"));
+      const newVet = {
+        ...vet,
+        userId: parseInt(sessionStorage.getItem("credentials"))
+      };
+      VetManager.post(newVet).then(() => props.history.push("/vets"));
     }
   };
 
@@ -48,26 +55,28 @@ const VetForm = props => {
               type="text"
               required
               onChange={handleFieldChange}
-              id="email" 
+              id="email"
               placeholder="Email"
             />
             <label htmlFor="email">Email</label>
-      
-         <input
+
+            <input
               type="text"
               required
               onChange={handleFieldChange}
               id="hospitalAddress"
               placeholder="Hospital Address"
             />
-         <label htmlFor="hospitalAddress"> Hospital Address </label>
+            <label htmlFor="hospitalAddress"> Hospital Address </label>
           </div>
           <div className="alignRight">
             <button
               type="button"
               disabled={isLoading}
               onClick={constructNewVet}
-            >Submit</button>
+            >
+              Submit
+            </button>
           </div>
         </fieldset>
       </form>

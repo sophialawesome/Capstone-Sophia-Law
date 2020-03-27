@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import AppointmentManager from "../../modules/AppointmentManager";
-//import {firstLetterCase} from '../../modules/helpers'
 
-const AppoinrmentDetail = props => {
+
+const AppointmentDetail = props => {
   const [appointment, setAppointment] = useState({ reason: "", date: ""});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    Appointmentanager.get(props.AppointmentId).then(appointment => {
-      setCat({
+    AppointmentManager.get(props.appointmentId).then(appointment => {
+      setAppointment({
         reason: appointment.reason,
         date: appointment.date
       });
@@ -25,9 +25,6 @@ const AppoinrmentDetail = props => {
   return (
     <div className="card">
       <div className="card-content">
-        {/* <picture>
-          <img src={require("./mona1-cropped.jpg")} alt="My Cat" />
-        </picture> */}
         <h3>
           Reason: <span style={{ color: "darkslategrey" }}>{appointment.reason}</span>
         </h3>

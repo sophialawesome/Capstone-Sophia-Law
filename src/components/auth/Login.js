@@ -21,7 +21,16 @@ const Login = props => {
         props.history.push("/Home");
       }
     });
-  };
+
+    /* sessionStorage.setItem(
+      "credentials",
+      JSON.stringify(credentials)
+    );
+    props.history.push("/cats"); */
+  }
+
+    
+
 
   return (
     <Form onSubmit={handleLogin} className="login_form">

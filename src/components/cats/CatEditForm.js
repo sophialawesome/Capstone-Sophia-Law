@@ -22,7 +22,8 @@ const CatEditForm = props => {
       breed: cat.breed,
       gender: cat.gender,
       birthdate: cat.birthdate,
-      adoptionDate: cat.adoptionDate
+      adoptionDate: cat.adoptionDate,
+      ownerId: cat.ownerId
     };
 
     CatManager.update(editedCat)
@@ -53,15 +54,37 @@ const CatEditForm = props => {
             <label htmlFor="name">Cat name</label>
 
             <input
+              type="date"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="birthdate"
+              value={cat.birthdate}
+            />
+            <label htmlFor="birthdate">Birth Date</label>
+
+            <input
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="breed"
-              value={cat.breed}
+              id="gender"
+              value={cat.gender}
             />
-            <label htmlFor="breed">Breed</label>
+            <label htmlFor="gender">Gender</label>
+
+            
+            <input
+              type="date"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="adoptionDate"
+              value={cat.adoptionDate}
+            />
+            <label htmlFor="adoptionDate">Adoption Date</label>
           </div>
+      
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}

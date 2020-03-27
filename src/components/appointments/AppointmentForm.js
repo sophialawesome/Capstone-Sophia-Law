@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
-import AppointmentManager from '../../modules/AppointmentManager';
-
+import React, { useState } from "react";
+import AppointmentManager from "../../modules/AppointmentManager";
 
 const AppointmentForm = props => {
   const [appointment, setAppointment] = useState({ reason: "", date: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
-    const stateToChange = { ...appointment};
+    const stateToChange = { ...appointment };
     stateToChange[evt.target.id] = evt.target.value;
-    setOwner(stateToChange);
+    setAppointment(stateToChange);
   };
 
   const constructNewAppointment = evt => {
     evt.preventDefault();
-    if (owner.name === "" || owner.phoneNumber === "") {
-      window.alert("Please input owner's name and phone number.");
+    if (appointment.reason === "" || appointment.date === "") {
+      window.alert("Please input appointment reason and date.");
     } else {
       setIsLoading(true);
-     OwnerManager.post(owner)
-        .then(() => props.history.push("/owners"));
+      const newAppointment = {
+        ...appointment,
+        userId: parseInt(sessionStorage.getItem("credentials"))
+      };
+      AppointmentManager.post(newAppointment).then(() =>
+        props.history.push("/appointments")
+      );
     }
   };
 
@@ -32,34 +36,26 @@ const AppointmentForm = props => {
               type="text"
               required
               onChange={handleFieldChange}
-              id="name"
-              placeholder="Owner name"
+              id="reason"
+              placeholder="Appointment Reason"
             />
-            <label htmlFor="name">Name</label>
+            <label htmlFor="reason">Appointment Reason</label>
             <input
-              type="text"
+              type="date"
               required
               onChange={handleFieldChange}
-              id="phoneNumber"
-              placeholder="Phone Number"
+              id="date"
             />
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="email" 
-              placeholder="Email"
-            />
-            <label htmlFor="email">Email</label>
-      
+            <label htmlFor="date">Appointment Date</label>
           </div>
           <div className="alignRight">
             <button
               type="button"
               disabled={isLoading}
-              onClick={constructNewOwner}
-            >Submit</button>
+              onClick={constructNewAppointment}
+            >
+              Submit
+            </button>
           </div>
         </fieldset>
       </form>
@@ -67,4 +63,4 @@ const AppointmentForm = props => {
   );
 };
 
-export default OwnerForm;
+export default AppointmentForm;

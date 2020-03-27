@@ -7,7 +7,7 @@ const CatDetail = props => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    CatManager.get(props.CatId).then(cat => {
+    CatManager.get(props.catId).then(cat => {
       setCat({
         name: cat.name,
         breed: cat.breed

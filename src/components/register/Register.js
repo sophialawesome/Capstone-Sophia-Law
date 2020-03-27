@@ -5,7 +5,7 @@ import { Form, Button} from "react-bootstrap"
 
 
 const Register = props => {
-  const [owner, setOwner] = useState({ email: "", username: ""});
+  const [owner, setOwner] = useState({ email: "", name: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -35,12 +35,7 @@ const Register = props => {
             placeholder="Email address"
             required="" autoFocus="" />
         </div>
-        <div>
-        <input onChange={handleFieldChange} type="username"
-            id="username"
-            placeholder="Username"
-            required="" autoFocus="" />
-        </div>
+    
         <Button type="submit" bg="dark" variant="dark" disabled={isLoading} >Submit</Button>
     </Form>
   );
