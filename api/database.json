@@ -18,39 +18,200 @@
       "id": 2
     },
     {
+      "id": 3,
       "name": "Bugaboo",
       "breed": "Scottish Fold",
-      "birthdate": "1864-01-16",
       "gender": "Male",
-      "adoptionDate": "2008-06-16",
-      "owner": "Tyler Cox",
-      "id": 3
+      "birthdate": "1864-01-16",
+      "adoptionDate": "2008-06-16"
+    },
+    {
+      "id": 4,
+      "name": "CATara",
+      "breed": "Norwegian Forest",
+      "gender": "Female",
+      "birthdate": "2020-01-05",
+      "adoptionDate": "2020-03-26"
+    },
+    {
+      "name": "cat",
+      "breed": "cat",
+      "birthdate": "2020-03-03",
+      "gender": "Female",
+      "adoptionDate": "2020-03-26",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "name": "1",
+      "breed": "1",
+      "birthdate": "2020-01-01",
+      "gender": "Female",
+      "adoptionDate": "2020-02-28",
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "name": "kitty",
+      "breed": "cat",
+      "birthdate": "2020-03-30",
+      "gender": "Female",
+      "adoptionDate": "2020-03-20",
+      "userId": 1,
+      "id": 7
     }
   ],
   "owners": [
     {
       "id": 1,
-      "name": "Sophia",
-      "phoneNumber": "000-000-0000",
-      "email": "crazycatlady@sophia.com"
+      "email": "sophia@sophia.com",
+      "name": "Sophia"
+    },
+    {
+      "email": "mona@mona.com",
+      "name": "Mona",
+      "id": 2
+    },
+    {
+      "email": "bruh@bruh.com",
+      "name": "Bro",
+      "id": 3
     }
   ],
   "vets": [
     {
       "id": 1,
-      "name": "Dogtor Woof",
+      "name": "Dogtor Woofie",
       "phoneNumber": "111-111-1111",
       "email": "callthedogtor@dawg.com",
-      "hospitalAddress": "The Institution for Clinically Insane Felines"
+      "hospitalAddress": "The Institution for Clinically Insane Felines",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "Catwoman",
+      "phoneNumber": "030-030-3030",
+      "email": "meow@catwoman.com",
+      "hospitalAddress": "2222 Arkham Street",
+      "userId": 2
+    },
+    {
+      "id": 6,
+      "name": "Sophia Law",
+      "phoneNumber": "123-456-7890",
+      "email": "sophia@law.com",
+      "hospitalAddress": "123 Main Street",
+      "userId": 3
+    },
+    {
+      "name": "Dr. Smith",
+      "phoneNumber": "111-111-1111",
+      "email": "smith@smith.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "123 Main Lane",
+      "id": 7
+    },
+    {
+      "name": "Dr. Felix Felinus",
+      "phoneNumber": "000-000-0101",
+      "email": "purr@purr.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "102 Mew Lane",
+      "id": 8
+    },
+    {
+      "name": "1",
+      "phoneNumber": "1",
+      "email": "1",
+      "hospitalAddres": "",
+      "hospitalAddress": "1",
+      "id": 9
+    },
+    {
+      "name": "12",
+      "phoneNumber": "12",
+      "email": "12",
+      "hospitalAddres": "",
+      "hospitalAddress": "12",
+      "id": 10
+    },
+    {
+      "name": "2",
+      "phoneNumber": "2",
+      "email": "2",
+      "hospitalAddres": "",
+      "hospitalAddress": "2",
+      "id": 11
+    },
+    {
+      "name": "fhgohsoghs",
+      "phoneNumber": "121213232123",
+      "email": "djgndkfjgnl@idk.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "dudhldjgldfgj",
+      "id": 12
+    },
+    {
+      "name": "vet",
+      "phoneNumber": "vet",
+      "email": "vet",
+      "hospitalAddres": "",
+      "hospitalAddress": "vet",
+      "id": 13
+    },
+    {
+      "name": "Sherlock Holmes",
+      "phoneNumber": "1234567890",
+      "email": "elementary@watson.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "146 Benedict Cumberbatch Drive",
+      "id": 14
+    },
+    {
+      "name": "Vet",
+      "phoneNumber": "123-123-1234",
+      "email": "vet@vet.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "123 Vet Drive",
+      "userId": 2,
+      "id": 15
+    },
+    {
+      "name": "Vet2",
+      "phoneNumber": "123456778",
+      "email": "vet2@vet2.com",
+      "hospitalAddres": "",
+      "hospitalAddress": "123 Where Vets Live Road",
+      "userId": 2,
+      "id": 16
     }
   ],
   "appointments": [
     {
       "id": 1,
-      "date": "2020-04-22",
-      "reason": "Routine checkup",
-      "vetId": 1,
-      "catId": 1
+      "reason": "Routine checkups",
+      "date": "2020-04-22"
+    },
+    {
+      "reason": "physical therapy",
+      "date": "2020-06-20",
+      "id": 2
+    },
+    {
+      "reason": "a",
+      "date": "2020-11-11",
+      "id": 3
+    },
+    {
+      "reason": "appointment",
+      "date": "2020-05-20",
+      "id": 4
+    },
+    {
+      "reason": "aaaaaaaaaaaaaa",
+      "date": "2020-03-27",
+      "userId": 2,
+      "id": 5
     }
   ]
 }

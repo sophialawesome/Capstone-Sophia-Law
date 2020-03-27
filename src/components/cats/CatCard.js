@@ -3,7 +3,7 @@ import React from "react";
 
 const CatCard = props => {
     return (
-        <div className="card-content">
+        <div className="cat-card">
             <h3>
                 Name: <span className="card-catname">{props.cat.name}</span>
             </h3>
@@ -11,17 +11,17 @@ const CatCard = props => {
             <p>Date of Birth: {props.cat.birthdate}</p>
             <p>Gender: {props.cat.gender}</p>
             <p>Adoption Date: {props.cat.adoptionDate}</p>
-            <p>Owner: {props.cat.ownerId}</p>
+            
           
           <button
           type="button"
           onClick={() => props.deleteCat(props.cat.id)}
         >
-          Discharge
+          Delete
         </button>
-        <Link to={`/cats/${props.cat.id}`}>
+        {/* <Link to={`/cats/${props.cat.id}`}>
           <button>Details</button>
-        </Link>
+        </Link> */}
       <button
         type="button"
         onClick={() => props.history.push(`/cats/${props.cat.id}/edit`)}

@@ -7,7 +7,7 @@ const CatDetail = props => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    CatManager.get(props.CatId).then(cat => {
+    CatManager.get(props.catId).then(cat => {
       setCat({
         name: cat.name,
         breed: cat.breed
@@ -33,7 +33,7 @@ const CatDetail = props => {
         </h3>
         <p>Breed: {cat.breed}</p>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
-          Discharge
+          Delete Cat
         </button>
       </div>
     </div>
